@@ -26,5 +26,3 @@ Superstore Dataset (Kaggle)
 - Top customers and products were identified.
 - Data quality checks were performed.
 
-## Author
-Kanak Jangid
