@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Database files (optional)
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.log

@@ -1,0 +1,82 @@
+-- Total Records
+SELECT COUNT(*) AS TotalRows
+FROM "Sample - Superstore";
+
+-- Schema
+PRAGMA table_info("Sample - Superstore");
+
+-- Sample Data
+SELECT *
+FROM "Sample - Superstore"
+LIMIT 10;
+
+-- Region Filter
+SELECT *
+FROM "Sample - Superstore"
+WHERE "Region" = 'West';
+
+-- Category Filter
+SELECT *
+FROM "Sample - Superstore"
+WHERE "Category" = 'Technology';
+
+-- Sales Filter
+SELECT *
+FROM "Sample - Superstore"
+WHERE "Sales" > 500;
+
+-- Category Wise Sales
+SELECT "Category",
+SUM("Sales") AS TotalSales
+FROM "Sample - Superstore"
+GROUP BY "Category";
+
+-- Category Wise Quantity
+SELECT "Category",
+SUM("Quantity") AS TotalQuantity
+FROM "Sample - Superstore"
+GROUP BY "Category";
+
+-- Average Sales by Category
+SELECT "Category",
+AVG("Sales") AS AvgSales
+FROM "Sample - Superstore"
+GROUP BY "Category";
+
+-- Region Wise Sales
+SELECT "Region",
+SUM("Sales") AS TotalSales
+FROM "Sample - Superstore"
+GROUP BY "Region";
+
+-- Top 10 Customers
+SELECT "Customer Name",
+SUM("Sales") AS TotalSales
+FROM "Sample - Superstore"
+GROUP BY "Customer Name"
+ORDER BY TotalSales DESC
+LIMIT 10;
+
+-- Top 10 Products
+SELECT "Product Name",
+SUM("Sales") AS TotalSales
+FROM "Sample - Superstore"
+GROUP BY "Product Name"
+ORDER BY TotalSales DESC
+LIMIT 10;
+
+-- Duplicate Orders
+SELECT "Order ID",
+COUNT(*) AS DuplicateCount
+FROM "Sample - Superstore"
+GROUP BY "Order ID"
+HAVING COUNT(*) > 1;
+
+-- Unique Orders
+SELECT COUNT(DISTINCT "Order ID") AS UniqueOrders
+FROM "Sample - Superstore";
+
+-- Null Sales Check
+SELECT *
+FROM "Sample - Superstore"
+WHERE "Sales" IS NULL;
